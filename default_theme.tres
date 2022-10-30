@@ -1,0 +1,53 @@
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://bnsiffbiy4iap"]
+
+[ext_resource type="Texture2D" uid="uid://1lnbldvby3wl" path="res://assets/textures/button_9_slice/hover.png" id="1_1s77w"]
+[ext_resource type="FontFile" uid="uid://ch5k73koibqni" path="res://assets/pixel_rpg.ttf" id="1_7eeve"]
+[ext_resource type="Texture2D" uid="uid://fqt7w1sjdul5" path="res://assets/textures/button_9_slice/normal.png" id="1_xaxgk"]
+[ext_resource type="Texture2D" uid="uid://bm730ynswuhw7" path="res://assets/textures/button_9_slice/pressed.png" id="2_nvq8x"]
+[ext_resource type="Texture2D" uid="uid://b6jatjxgy1s5r" path="res://assets/textures/panel_9_slice.png" id="4_vj846"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c0cbe"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iwd5d"]
+texture = ExtResource("1_1s77w")
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 2.0
+margin_bottom = 2.0
+region_rect = Rect2(0, 0, 6, 6)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pfbth"]
+texture = ExtResource("1_xaxgk")
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 2.0
+margin_bottom = 2.0
+region_rect = Rect2(0, 0, 6, 6)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sbv5j"]
+texture = ExtResource("2_nvq8x")
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 2.0
+margin_bottom = 2.0
+region_rect = Rect2(0, 0, 6, 6)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_13kkx"]
+texture = ExtResource("4_vj846")
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 2.0
+margin_bottom = 2.0
+region_rect = Rect2(0, 0, 6, 6)
+
+[resource]
+default_font = ExtResource("1_7eeve")
+default_font_size = 6
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/styles/focus = SubResource("StyleBoxEmpty_c0cbe")
+Button/styles/hover = SubResource("StyleBoxTexture_iwd5d")
+Button/styles/normal = SubResource("StyleBoxTexture_pfbth")
+Button/styles/pressed = SubResource("StyleBoxTexture_sbv5j")
+Panel/styles/panel = SubResource("StyleBoxTexture_13kkx")
