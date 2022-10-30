@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://be0gvhmimfdwh"]
+
+[ext_resource type="Script" path="res://battle/battle.gd" id="1_flv6j"]
+[ext_resource type="Texture2D" uid="uid://hehv3deekicm" path="res://assets/textures/dungeon.png" id="2_dmltc"]
+[ext_resource type="Texture2D" uid="uid://bq8bognr5usv5" path="res://assets/textures/mobile_rpg_mockup.png" id="3_bgxaa"]
+[ext_resource type="Texture2D" uid="uid://cj8jhmism1c8x" path="res://assets/textures/rat.png" id="3_btjx0"]
+[ext_resource type="FontFile" uid="uid://ch5k73koibqni" path="res://assets/pixel_rpg.ttf" id="4_bbd7s"]
+
+[node name="Battle" type="Node"]
+script = ExtResource("1_flv6j")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(45, 80)
+texture = ExtResource("2_dmltc")
+
+[node name="MobileRpgMockup" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(45, 80)
+texture = ExtResource("3_bgxaa")
+
+[node name="Enemy" type="Node2D" parent="."]
+position = Vector2(46, 32)
+
+[node name="Sprite" type="Sprite2D" parent="Enemy"]
+texture = ExtResource("3_btjx0")
+
+[node name="HPLabel" type="Label" parent="Enemy"]
+offset_left = -2.0
+offset_top = -23.0
+offset_right = 16.0
+offset_bottom = -14.0
+theme_override_fonts/font = ExtResource("4_bbd7s")
+theme_override_font_sizes/font_size = 6
+text = "12"
+vertical_alignment = 1
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SwordButton" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 73.0
+offset_right = 41.0
+offset_bottom = 87.0
+theme_override_fonts/font = ExtResource("4_bbd7s")
+theme_override_font_sizes/font_size = 6
+text = "Sword"
+
+[connection signal="pressed" from="UI/SwordButton" to="." method="_on_sword_button_pressed"]
