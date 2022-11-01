@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://or02gjd30pjt"]
+
+[ext_resource type="Script" path="res://battle/enemy/enemy.gd" id="1_nu4ce"]
+[ext_resource type="Texture2D" uid="uid://cj8jhmism1c8x" path="res://assets/textures/rat.png" id="2_g065r"]
+
+[sub_resource type="Animation" id="Animation_h8rcp"]
+resource_name = "shake"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-2, 2), Vector2(2, -2), Vector2(-3, -2), Vector2(2, 2), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nlwaw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3kasw"]
+resource_name = "attack"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -3), Vector2(0, 9), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_owu18"]
+_data = {
+"RESET": SubResource("Animation_nlwaw"),
+"attack": SubResource("Animation_3kasw"),
+"shake": SubResource("Animation_h8rcp")
+}
+
+[node name="Enemy" type="Node2D"]
+script = ExtResource("1_nu4ce")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_g065r")
+
+[node name="HPLabel" type="Label" parent="."]
+offset_left = -2.0
+offset_top = -23.0
+offset_right = 16.0
+offset_bottom = -14.0
+text = "25"
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_owu18")
+}

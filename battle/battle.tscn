@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://be0gvhmimfdwh"]
+[gd_scene load_steps=5 format=3 uid="uid://be0gvhmimfdwh"]
 
 [ext_resource type="Script" path="res://battle/battle.gd" id="1_flv6j"]
 [ext_resource type="Texture2D" uid="uid://hehv3deekicm" path="res://assets/textures/dungeon.png" id="2_dmltc"]
 [ext_resource type="Texture2D" uid="uid://bq8bognr5usv5" path="res://assets/textures/mobile_rpg_mockup.png" id="3_bgxaa"]
-[ext_resource type="Texture2D" uid="uid://cj8jhmism1c8x" path="res://assets/textures/rat.png" id="3_btjx0"]
-[ext_resource type="Script" path="res://battle/enemy.gd" id="4_umymf"]
+[ext_resource type="PackedScene" uid="uid://or02gjd30pjt" path="res://battle/enemy/enemy.tscn" id="4_8k0wj"]
 
 [node name="Battle" type="Node"]
 script = ExtResource("1_flv6j")
@@ -14,24 +13,13 @@ position = Vector2(45, 80)
 texture = ExtResource("2_dmltc")
 
 [node name="MobileRpgMockup" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.501961)
 position = Vector2(45, 80)
 texture = ExtResource("3_bgxaa")
 
-[node name="Enemy" type="Node2D" parent="."]
+[node name="Enemy" parent="." instance=ExtResource("4_8k0wj")]
 position = Vector2(46, 32)
-script = ExtResource("4_umymf")
-
-[node name="Sprite" type="Sprite2D" parent="Enemy"]
-texture = ExtResource("3_btjx0")
-
-[node name="HPLabel" type="Label" parent="Enemy"]
-offset_left = -2.0
-offset_top = -23.0
-offset_right = 16.0
-offset_bottom = -14.0
-text = "0"
-vertical_alignment = 1
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -42,14 +30,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="StatsPanel" type="Panel" parent="UI"]
-layout_mode = 0
 offset_left = 3.0
 offset_top = 52.0
 offset_right = 87.0
 offset_bottom = 70.0
 
 [node name="SwordButton" type="Button" parent="UI"]
-layout_mode = 0
 offset_left = 9.0
 offset_top = 73.0
 offset_right = 41.0
@@ -57,9 +43,9 @@ offset_bottom = 86.0
 text = "Sword"
 
 [node name="TextBoxPanel" type="Panel" parent="UI"]
-layout_mode = 0
 offset_top = 137.0
 offset_right = 90.0
 offset_bottom = 160.0
 
+[connection signal="died" from="Enemy" to="." method="_on_enemy_died"]
 [connection signal="pressed" from="UI/SwordButton" to="." method="_on_sword_button_pressed"]
