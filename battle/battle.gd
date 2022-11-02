@@ -2,7 +2,7 @@ extends Node
 
 
 @onready var enemy: Node2D = $Enemy
-@onready var sword_button: Button = $UI/SwordButton
+@onready var action_buttons: GridContainer = $UI/ActionButtons
 
 
 func _on_sword_button_pressed() -> void:
@@ -12,4 +12,4 @@ func _on_sword_button_pressed() -> void:
 
 func _on_enemy_died() -> void:
 	enemy = null
-	sword_button.disabled = true
+	action_buttons.hide()
