@@ -11,7 +11,7 @@ var hp := max_hp:
 	get:
 		return hp
 	set(value):
-		hp = min(value, max_hp)
+		hp = clamp(value, 0, max_hp)
 		hp_changed.emit(hp)
 
 var max_ap := 3
@@ -19,13 +19,15 @@ var ap := max_ap:
 	get:
 		return ap
 	set(value):
-		ap = min(value, max_ap)
+		ap = clamp(value, 0, max_ap)
 		ap_changed.emit(ap)
+		if ap <= 0:
+			end_turn.emit()
 
 var max_mp := 10
 var mp := max_mp:
 	get:
 		return mp
 	set(value):
-		mp = min(value, max_mp)
+		mp = clamp(value, 0, max_mp)
 		mp_changed.emit(mp)

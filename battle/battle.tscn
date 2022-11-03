@@ -35,7 +35,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="StatsPanel" type="Panel" parent="UI"]
-layout_mode = 0
 offset_left = 3.0
 offset_top = 48.0
 offset_right = 87.0
@@ -43,7 +42,6 @@ offset_bottom = 70.0
 script = ExtResource("6_u4hy0")
 
 [node name="StatsContainer" type="HBoxContainer" parent="UI/StatsPanel"]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -51,7 +49,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HPLabel" type="Label" parent="UI/StatsPanel/StatsContainer"]
-layout_mode = 2
 offset_top = 2.0
 offset_right = 25.0
 offset_bottom = 20.0
@@ -62,7 +59,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="APLabel" type="Label" parent="UI/StatsPanel/StatsContainer"]
-layout_mode = 2
 offset_left = 29.0
 offset_top = 2.0
 offset_right = 54.0
@@ -74,7 +70,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MPLabel" type="Label" parent="UI/StatsPanel/StatsContainer"]
-layout_mode = 2
 offset_left = 58.0
 offset_top = 2.0
 offset_right = 84.0
@@ -86,7 +81,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ActionButtons" type="GridContainer" parent="UI"]
-layout_mode = 0
 offset_left = 9.0
 offset_top = 73.0
 offset_right = 81.0
@@ -97,14 +91,12 @@ columns = 2
 
 [node name="SwordButton" type="Button" parent="UI/ActionButtons"]
 custom_minimum_size = Vector2(32, 13)
-layout_mode = 2
 offset_right = 32.0
 offset_bottom = 13.0
 text = "Sword"
 
 [node name="HealButton" type="Button" parent="UI/ActionButtons"]
 custom_minimum_size = Vector2(32, 13)
-layout_mode = 2
 offset_left = 40.0
 offset_right = 72.0
 offset_bottom = 13.0
@@ -112,7 +104,6 @@ text = "Heal"
 
 [node name="BlockButton" type="Button" parent="UI/ActionButtons"]
 custom_minimum_size = Vector2(32, 13)
-layout_mode = 2
 offset_top = 16.0
 offset_right = 32.0
 offset_bottom = 29.0
@@ -120,7 +111,6 @@ text = "Block"
 
 [node name="EmptyButton" type="Button" parent="UI/ActionButtons"]
 custom_minimum_size = Vector2(32, 13)
-layout_mode = 2
 offset_left = 40.0
 offset_top = 16.0
 offset_right = 72.0
@@ -128,14 +118,12 @@ offset_bottom = 29.0
 
 [node name="EmptyButton2" type="Button" parent="UI/ActionButtons"]
 custom_minimum_size = Vector2(32, 13)
-layout_mode = 2
 offset_top = 32.0
 offset_right = 32.0
 offset_bottom = 45.0
 
 [node name="EmptyButton3" type="Button" parent="UI/ActionButtons"]
 custom_minimum_size = Vector2(32, 13)
-layout_mode = 2
 offset_left = 40.0
 offset_top = 32.0
 offset_right = 72.0
@@ -143,21 +131,18 @@ offset_bottom = 45.0
 
 [node name="EmptyButton4" type="Button" parent="UI/ActionButtons"]
 custom_minimum_size = Vector2(32, 13)
-layout_mode = 2
 offset_top = 48.0
 offset_right = 32.0
 offset_bottom = 61.0
 
 [node name="EmptyButton5" type="Button" parent="UI/ActionButtons"]
 custom_minimum_size = Vector2(32, 13)
-layout_mode = 2
 offset_left = 40.0
 offset_top = 48.0
 offset_right = 72.0
 offset_bottom = 61.0
 
 [node name="TextBoxPanel" type="Panel" parent="UI"]
-layout_mode = 0
 offset_top = 137.0
 offset_right = 90.0
 offset_bottom = 160.0
