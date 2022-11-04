@@ -6,6 +6,8 @@ signal ap_changed(value: int)
 signal mp_changed(value: int)
 signal end_turn
 
+var battle_units: BattleUnits = preload("res://battle_units.tres")
+
 var max_hp := 25
 var hp := max_hp:
 	get:
@@ -31,3 +33,11 @@ var mp := max_mp:
 	set(value):
 		mp = clamp(value, 0, max_mp)
 		mp_changed.emit(mp)
+
+
+func _ready() -> void:
+	battle_units.player_stats = self
+
+
+func _exit_tree() -> void:
+	battle_units.player_stats = null

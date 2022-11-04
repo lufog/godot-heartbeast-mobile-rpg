@@ -8,6 +8,16 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": "Resource",
+"class": &"BattleUnits",
+"language": &"GDScript",
+"path": "res://battle_units.gd"
+}]
+_global_script_class_icons={
+"BattleUnits": ""
+}
+
 [application]
 
 config/name="Mobile RPG"

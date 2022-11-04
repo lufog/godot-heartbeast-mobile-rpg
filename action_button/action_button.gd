@@ -1,7 +1,7 @@
 extends Button
 
 
-@onready var current_scene := get_tree().current_scene
+var battle_units: BattleUnits = preload("res://battle_units.tres")
 
 
 func _pressed() -> void:

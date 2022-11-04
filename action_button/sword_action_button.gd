@@ -3,11 +3,13 @@ extends "res://action_button/action_button.gd"
 
 const slash_effect_scene: PackedScene = preload("res://effects/slash_effect.tscn")
 
+@onready var current_scene := get_tree().current_scene
+
 
 func _pressed() -> void:
 	super()
-	var enemy := current_scene.find_child("Enemy")
-	var player_stats := current_scene.find_child("PlayerStats")
+	var enemy = battle_units.enemy
+	var player_stats = battle_units.player_stats
 	if enemy != null and player_stats != null:
 		_create_slash_effect(enemy.global_position)
 		enemy.take_damage(4)
