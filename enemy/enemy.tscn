@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://or02gjd30pjt"]
+[gd_scene load_steps=7 format=3]
 
-[ext_resource type="Script" path="res://battle/enemy/enemy.gd" id="1_nu4ce"]
-[ext_resource type="Texture2D" uid="uid://cj8jhmism1c8x" path="res://assets/textures/rat.png" id="2_g065r"]
+[ext_resource type="Script" path="res://enemy/enemy.gd" id="1_nu4ce"]
+[ext_resource type="Texture2D" uid="uid://cj8jhmism1c8x" path="res://enemy/textures/rat.png" id="2_g065r"]
 
 [sub_resource type="Animation" id="Animation_nlwaw"]
 length = 0.001

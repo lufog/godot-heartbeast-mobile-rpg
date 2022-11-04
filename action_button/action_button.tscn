@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bveidgc36uixc"]
+
+[ext_resource type="Script" path="res://action_button/action_button.gd" id="1_eitq4"]
+
+[node name="ActionButton" type="Button"]
+custom_minimum_size = Vector2(32, 13)
+offset_right = 4.0
+offset_bottom = 4.0
+script = ExtResource("1_eitq4")

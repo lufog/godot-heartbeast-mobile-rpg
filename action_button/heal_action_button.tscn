@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr1vhd3kaf1yg"]
+
+[ext_resource type="PackedScene" uid="uid://bveidgc36uixc" path="res://action_button/action_button.tscn" id="1_qha5g"]
+[ext_resource type="Script" path="res://action_button/heal_action_button.gd" id="2_3v7qv"]
+
+[node name="HealActionButton" instance=ExtResource("1_qha5g")]
+text = "Heal"
+script = ExtResource("2_3v7qv")

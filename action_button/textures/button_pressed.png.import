@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj8jhmism1c8x"
-path="res://.godot/imported/rat.png-ea1656dc164315979f6e88b9ae987408.ctex"
+uid="uid://bm730ynswuhw7"
+path="res://.godot/imported/button_pressed.png-36babd9f6668d95c67297e69bda4c280.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/rat.png"
-dest_files=["res://.godot/imported/rat.png-ea1656dc164315979f6e88b9ae987408.ctex"]
+source_file="res://action_button/textures/button_pressed.png"
+dest_files=["res://.godot/imported/button_pressed.png-36babd9f6668d95c67297e69bda4c280.ctex"]
 
 [params]
 

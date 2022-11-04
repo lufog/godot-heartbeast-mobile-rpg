@@ -21,8 +21,8 @@ func attack(target) -> void:
 	await _scene_tree.create_timer(0.4).timeout
 	current_target = target
 	animation_player.play("attack")
-	current_target = null
 	await animation_player.animation_finished
+	current_target = null
 	end_turn.emit()
 
 

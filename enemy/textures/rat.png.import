@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oqscgx7baseb"
-path="res://.godot/imported/slash_effect.png-4d7ce6e8498848e13748693889a51612.ctex"
+uid="uid://cj8jhmism1c8x"
+path="res://.godot/imported/rat.png-d7641f56ee2bde7bfe61a920716ff362.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/slash_effect.png"
-dest_files=["res://.godot/imported/slash_effect.png-4d7ce6e8498848e13748693889a51612.ctex"]
+source_file="res://enemy/textures/rat.png"
+dest_files=["res://.godot/imported/rat.png-d7641f56ee2bde7bfe61a920716ff362.ctex"]
 
 [params]
 

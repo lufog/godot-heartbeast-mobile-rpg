@@ -1,9 +1,9 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://bnsiffbiy4iap"]
+[gd_resource type="Theme" load_steps=11 format=3]
 
-[ext_resource type="Texture2D" uid="uid://1lnbldvby3wl" path="res://assets/textures/button_9_slice/hover.png" id="1_1s77w"]
+[ext_resource type="Texture2D" uid="uid://1lnbldvby3wl" path="res://action_button/textures/button_hover.png" id="1_1s77w"]
 [ext_resource type="FontFile" uid="uid://ch5k73koibqni" path="res://assets/pixel_rpg.ttf" id="1_7eeve"]
-[ext_resource type="Texture2D" uid="uid://fqt7w1sjdul5" path="res://assets/textures/button_9_slice/normal.png" id="1_xaxgk"]
-[ext_resource type="Texture2D" uid="uid://bm730ynswuhw7" path="res://assets/textures/button_9_slice/pressed.png" id="2_nvq8x"]
+[ext_resource type="Texture2D" uid="uid://fqt7w1sjdul5" path="res://action_button/textures/button_normal.png" id="1_xaxgk"]
+[ext_resource type="Texture2D" uid="uid://bm730ynswuhw7" path="res://action_button/textures/button_pressed.png" id="2_nvq8x"]
 [ext_resource type="Texture2D" uid="uid://b6jatjxgy1s5r" path="res://assets/textures/panel_9_slice.png" id="4_vj846"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c0cbe"]

@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://tkqub5rau8e0"]
+
+[ext_resource type="Script" path="res://effects/slash_effect.gd" id="1_4df3l"]
+[ext_resource type="Texture2D" uid="uid://oqscgx7baseb" path="res://effects/textures/slash_effect.png" id="2_buqws"]
+
+[sub_resource type="Animation" id="Animation_lsbnh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_wvtpe"]
+resource_name = "default"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7jqye"]
+_data = {
+"RESET": SubResource("Animation_lsbnh"),
+"default": SubResource("Animation_wvtpe")
+}
+
+[node name="SlashEffect" type="Node2D"]
+script = ExtResource("1_4df3l")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_buqws")
+hframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "default"
+playback_speed = 2.0
+libraries = {
+"": SubResource("AnimationLibrary_7jqye")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished" unbinds=1]
