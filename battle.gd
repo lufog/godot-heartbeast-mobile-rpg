@@ -41,7 +41,7 @@ func create_new_enemy() -> void:
 func start_enemy_turn() -> void:
 	battle_action_buttons.hide()
 	var enemy = battle_units.enemy
-	if enemy != null:
+	if enemy != null and not enemy.is_queued_for_deletion():
 		enemy.attack()
 		await enemy.end_turn
 	start_player_turn()

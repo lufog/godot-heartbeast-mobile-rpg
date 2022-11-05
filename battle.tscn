@@ -75,11 +75,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="UI"]
 layout_mode = 0
 offset_right = 90.0
 offset_bottom = 48.0
+mouse_filter = 2
 
 [node name="NextRoomButton" type="Button" parent="UI/CenterContainer"]
 visible = false
@@ -168,6 +170,19 @@ layout_mode = 0
 offset_top = 137.0
 offset_right = 90.0
 offset_bottom = 160.0
+
+[node name="TextBox" type="RichTextLabel" parent="UI/TextBoxPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+scroll_active = false
 
 [node name="FadeColorRect" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)

@@ -12,3 +12,10 @@ texture = ExtResource("2_vh64h")
 
 [node name="HPLabel" parent="." index="1"]
 text = "35hp"
+
+[node name="HoverInfo" parent="." index="3"]
+offset_left = -22.0
+offset_top = -10.0
+offset_right = 20.0
+offset_bottom = 10.0
+description = "A green slime."

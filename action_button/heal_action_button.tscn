@@ -6,3 +6,8 @@
 [node name="HealActionButton" instance=ExtResource("1_qha5g")]
 text = "Heal"
 script = ExtResource("2_3v7qv")
+
+[node name="HoverInfo" parent="." index="0"]
+layout_mode = 3
+description = "Heal
+Heals 5 health."

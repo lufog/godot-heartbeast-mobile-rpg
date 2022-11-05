@@ -6,3 +6,10 @@
 
 [node name="HPLabel" parent="." index="1"]
 text = "25hp"
+
+[node name="HoverInfo" parent="." index="3"]
+offset_left = -24.0
+offset_top = -15.0
+offset_right = 24.0
+offset_bottom = 15.0
+description = "A mean rat."
