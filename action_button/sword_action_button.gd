@@ -12,9 +12,9 @@ func _pressed() -> void:
 	var player_stats = battle_units.player_stats
 	if enemy != null and player_stats != null:
 		_create_slash_effect(enemy.global_position)
-		enemy.take_damage(4)
-		player_stats.mp += 2
 		player_stats.ap -= 1
+		player_stats.mp += 2
+		enemy.take_damage(4)
 
 
 func _create_slash_effect(effect_position: Vector2) -> void:

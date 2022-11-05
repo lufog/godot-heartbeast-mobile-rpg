@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5aevybtkvj3f"]
+
+[ext_resource type="PackedScene" uid="uid://p2e6i2n5evvw" path="res://enemies/enemy.tscn" id="1_llhqj"]
+
+[node name="Rat" instance=ExtResource("1_llhqj")]
+
+[node name="HPLabel" parent="." index="1"]
+text = "25hp"

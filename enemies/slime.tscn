@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhya2gesmn3y0"]
+
+[ext_resource type="PackedScene" uid="uid://p2e6i2n5evvw" path="res://enemies/enemy.tscn" id="1_fkvds"]
+[ext_resource type="Texture2D" uid="uid://bjrfxfa22se54" path="res://enemies/textures/slime.png" id="2_vh64h"]
+
+[node name="Slime" instance=ExtResource("1_fkvds")]
+damage = 3
+hp = 35
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_vh64h")
+
+[node name="HPLabel" parent="." index="1"]
+text = "35hp"

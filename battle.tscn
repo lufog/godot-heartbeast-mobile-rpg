@@ -1,16 +1,56 @@
-[gd_scene load_steps=9 format=3 uid="uid://cl47ne0sg116a"]
+[gd_scene load_steps=13 format=3 uid="uid://cl47ne0sg116a"]
 
 [ext_resource type="Script" path="res://battle.gd" id="1_flv6j"]
 [ext_resource type="Script" path="res://player_stats.gd" id="2_80dl3"]
 [ext_resource type="Texture2D" uid="uid://hehv3deekicm" path="res://assets/textures/dungeon.png" id="2_dmltc"]
+[ext_resource type="PackedScene" uid="uid://c5aevybtkvj3f" path="res://enemies/rat.tscn" id="2_qesdq"]
 [ext_resource type="Texture2D" uid="uid://bq8bognr5usv5" path="res://assets/textures/mobile_rpg_mockup.png" id="3_bgxaa"]
-[ext_resource type="PackedScene" path="res://enemy/enemy.tscn" id="4_8k0wj"]
+[ext_resource type="PackedScene" uid="uid://dhya2gesmn3y0" path="res://enemies/slime.tscn" id="5_j5rql"]
 [ext_resource type="Script" path="res://stats_panel.gd" id="6_u4hy0"]
 [ext_resource type="PackedScene" uid="uid://do7iui7hyk5rh" path="res://action_button/sword_action_button.tscn" id="7_rts36"]
 [ext_resource type="PackedScene" uid="uid://dr1vhd3kaf1yg" path="res://action_button/heal_action_button.tscn" id="8_lk7oe"]
 
+[sub_resource type="Animation" id="Animation_uqnk6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cvnjk"]
+resource_name = "fade"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeColorRect:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_enh17"]
+_data = {
+"RESET": SubResource("Animation_uqnk6"),
+"fade": SubResource("Animation_cvnjk")
+}
+
 [node name="Battle" type="Node"]
 script = ExtResource("1_flv6j")
+enemy_scenes = [ExtResource("2_qesdq"), ExtResource("5_j5rql")]
 
 [node name="PlayerStats" type="Node" parent="."]
 script = ExtResource("2_80dl3")
@@ -25,7 +65,7 @@ modulate = Color(1, 1, 1, 0.501961)
 position = Vector2(45, 80)
 texture = ExtResource("3_bgxaa")
 
-[node name="Enemy" parent="." instance=ExtResource("4_8k0wj")]
+[node name="EnemyMarker" type="Marker2D" parent="."]
 position = Vector2(46, 30)
 
 [node name="UI" type="Control" parent="."]
@@ -35,6 +75,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="UI"]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 48.0
+
+[node name="NextRoomButton" type="Button" parent="UI/CenterContainer"]
+visible = false
+custom_minimum_size = Vector2(70, 13)
+layout_mode = 2
+offset_left = 10.0
+offset_top = 17.0
+offset_right = 80.0
+offset_bottom = 30.0
+text = "ENTER NEXT ROOM"
 
 [node name="StatsPanel" type="Panel" parent="UI"]
 layout_mode = 0
@@ -114,7 +169,22 @@ offset_top = 137.0
 offset_right = 90.0
 offset_bottom = 160.0
 
+[node name="FadeColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_enh17")
+}
+
 [connection signal="ap_changed" from="PlayerStats" to="UI/StatsPanel" method="_on_player_stats_ap_changed"]
 [connection signal="hp_changed" from="PlayerStats" to="UI/StatsPanel" method="_on_player_stats_hp_changed"]
 [connection signal="mp_changed" from="PlayerStats" to="UI/StatsPanel" method="_on_player_stats_mp_changed"]
-[connection signal="died" from="Enemy" to="." method="_on_enemy_died"]
+[connection signal="pressed" from="UI/CenterContainer/NextRoomButton" to="." method="_on_next_room_button_pressed"]
